@@ -6,38 +6,37 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class RadioTest {
 
+    Radio radio = new Radio();
+
     @Test
     void setter() {
-        Radio cond = new Radio();
 
-        cond.setCurrentStation(5);
+        radio.setCurrentStation(5);
 
         int expected = 5;
-        int actual = cond.getCurrentStation();
+        int actual = radio.getCurrentStation();
 
         assertEquals(expected, actual);
     }
 
     @Test
     void setterBorder() {
-        Radio cond = new Radio();
 
-        cond.setCurrentStation(10);
+        radio.setCurrentStation(10);
 
         int expected = 0;
-        int actual = cond.getCurrentStation();
+        int actual = radio.getCurrentStation();
 
         assertEquals(expected, actual);
     }
 
     @Test
     void setterBorder2() {
-        Radio cond = new Radio();
 
-        cond.setCurrentStation(-1);
+        radio.setCurrentStation(-1);
 
         int expected = 0;
-        int actual = cond.getCurrentStation();
+        int actual = radio.getCurrentStation();
 
         assertEquals(expected, actual);
     }
@@ -58,98 +57,91 @@ public class RadioTest {
 
     @Test
     void nextStationBorder() {
-        Radio cond = new Radio();
 
-        cond.setCurrentStation(9);
+        radio.setCurrentStation(9);
 
-        cond.nextStation();
+        radio.nextStation();
 
         int expected = 9;
-        int actual = cond.getCurrentStation();
+        int actual = radio.getCurrentStation();
 
         assertEquals(expected, actual);
     }
 
     @Test
     void prevStation() {
-        Radio cond = new Radio();
 
-        cond.setCurrentStation(5);
+        radio.setCurrentStation(5);
 
-        cond.prevStation();
+        radio.prevStation();
 
         int expected = 4;
-        int actual = cond.getCurrentStation();
+        int actual = radio.getCurrentStation();
 
         assertEquals(expected, actual);
     }
 
     @Test
     void prevStationBorder() {
-        Radio cond = new Radio();
 
-        cond.setCurrentStation(0);
+        radio.setCurrentStation(0);
 
-        cond.prevStation();
+        radio.prevStation();
 
         int expected = 0;
-        int actual = cond.getCurrentStation();
+        int actual = radio.getCurrentStation();
 
         assertEquals(expected, actual);
     }
 
     @Test
     void increaseVolume() {
-        Radio cond = new Radio();
 
-        cond.currentVolume = 5;
+        radio.currentVolume = 5;
 
-        cond.increaseVolume();
+        radio.increaseVolume();
 
         int expected = 6;
-        int actual = cond.currentVolume;
+        int actual = radio.currentVolume;
 
         assertEquals(expected, actual);
     }
 
     @Test
     void increaseVolumeBorder() {
-        Radio cond = new Radio();
 
-        cond.currentVolume = 10;
+        radio.currentVolume = 10;
 
-        cond.increaseVolume();
+        radio.increaseVolume();
 
         int expected = 10;
-        int actual = cond.currentVolume;
+        int actual = radio.currentVolume;
 
         assertEquals(expected, actual);
     }
 
     @Test
     void volumeDown() {
-        Radio cond = new Radio();
 
-        cond.currentVolume = 5;
+        radio.currentVolume = 5;
 
-        cond.volumeDown();
+        radio.volumeDown();
 
         int expected = 4;
-        int actual = cond.currentVolume;
+        int actual = radio.currentVolume;
 
         assertEquals(expected, actual);
     }
 
     @Test
     void volumeDownBorder() {
-        Radio cond = new Radio();
 
-        cond.currentVolume = 0;
+        radio.currentVolume = 0;
 
-        cond.volumeDown();
+        radio.volumeDown();
 
         int expected = 0;
-        int actual = cond.currentVolume;
+        int actual = radio.currentVolume;
 
         assertEquals(expected, actual);
     }
